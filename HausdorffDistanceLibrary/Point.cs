@@ -7,6 +7,6 @@
         public Point(double value)
         {
             Value = value;
-        }
+        }  
     }
 }

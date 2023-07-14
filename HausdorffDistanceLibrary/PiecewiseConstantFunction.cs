@@ -6,12 +6,21 @@ namespace HausdorffDistanceLibrary
 {
     public class PiecewiseConstantFunction
     {
-        public List<Point> Points { get; set; }
+        private readonly List<Point> _points;
+        private readonly static string ErrorAddPoint = "Points should be ordered in ascending order\nLast: {0} > New: {1}";
 
         public PiecewiseConstantFunction()
         {
-            Points = new List<Point>();
+            _points = new List<Point>();
         }
+
+       public void Add(Point point)
+       {
+            if (_points.Count != 0 && _points.Last().Value > point.Value)
+                throw new Exception(string.Format(ErrorAddPoint, _points.Last().Value, point.Value));
+
+            _points.Add(point);
+        } 
 
         public double CalculateHausdorffDistance(PiecewiseConstantFunction other)
         {
@@ -25,9 +34,9 @@ namespace HausdorffDistanceLibrary
         {
             double distance = 0.0;
 
-            foreach (var point in first.Points)
+            foreach (var point in first._points)
             {
-                double minDistance = second.Points.Min(p => Math.Abs(p.Value - point.Value));
+                double minDistance = second._points.Min(p => Math.Abs(p.Value - point.Value));
 
                 if (minDistance > distance)
                     distance = minDistance;
@@ -40,8 +49,8 @@ namespace HausdorffDistanceLibrary
         {
             PiecewiseConstantFunction mergedFunction = new PiecewiseConstantFunction();
 
-            mergedFunction.Points.AddRange(first.Points);
-            mergedFunction.Points.AddRange(second.Points);
+            mergedFunction._points.AddRange(first._points);
+            mergedFunction._points.AddRange(second._points);
 
             return mergedFunction;
         }
