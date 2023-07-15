@@ -10,14 +10,14 @@ namespace HausdorffDistanceLibrary.Test
             {
                 // Arrange
                 PiecewiseConstantFunction f1 = new();
-                f1.Add(new Point(0.0));
-                f1.Add(new Point(0.5));
-                f1.Add(new Point(1.0));
+                f1.Add(new Point(0.0, 0.0));
+                f1.Add(new Point(0.5, 0.5));
+                f1.Add(new Point(1.0, 1.0));
 
                 PiecewiseConstantFunction f2 = new();
-                f2.Add(new Point(0.0));
-                f2.Add(new Point(0.5));
-                f2.Add(new Point(1.0));
+                f2.Add(new Point(0.0, 0.0));
+                f2.Add(new Point(0.5, 0.5));
+                f2.Add(new Point(1.0, 1.0));
 
                 // Act
                 double distance = f1.CalculateHausdorffDistance(f2);
@@ -45,14 +45,14 @@ namespace HausdorffDistanceLibrary.Test
             {
                 // Arrange
                 PiecewiseConstantFunction f1 = new();
-                f1.Add(new Point(0.0));
-                f1.Add(new Point(0.5));
-                f1.Add(new Point(1.0));
+                f1.Add(new Point(0.0, 0.0));
+                f1.Add(new Point(0.5, 0.5));
+                f1.Add(new Point(1.0, 1.0));
 
                 PiecewiseConstantFunction f2 = new();
-                f2.Add(new Point(0.1));
-                f2.Add(new Point(0.6));
-                f2.Add(new Point(1.0));
+                f2.Add(new Point(0.1, 0.1));
+                f2.Add(new Point(0.6, 0.6));
+                f2.Add(new Point(1.0, 1.0));
 
                 // Act
                 double distance = f1.CalculateHausdorffDistance(f2);
@@ -66,14 +66,14 @@ namespace HausdorffDistanceLibrary.Test
             {
                 // Arrange
                 PiecewiseConstantFunction f1 = new();
-                f1.Add(new Point(0.0));
-                f1.Add(new Point(0.5));
-                f1.Add(new Point(1.0));
+                f1.Add(new Point(0.0, 0.0));
+                f1.Add(new Point(0.5, 0.5));
+                f1.Add(new Point(1.0, 1.0));
 
                 PiecewiseConstantFunction f2 = new();
-                f2.Add(new Point(0.2));
-                f2.Add(new Point(0.7));
-                f2.Add(new Point(1.2));
+                f2.Add(new Point(0.2, 0.2));
+                f2.Add(new Point(0.7, 0.7));
+                f2.Add(new Point(1.2, 1.2));
 
                 // Act
                 double distance = f1.CalculateHausdorffDistance(f2);
@@ -87,14 +87,14 @@ namespace HausdorffDistanceLibrary.Test
             {
                 // Arrange
                 PiecewiseConstantFunction f1 = new();
-                f1.Add(new Point(0.0));
-                f1.Add(new Point(0.5));
-                f1.Add(new Point(1.0));
+                f1.Add(new Point(0.0, 0.0));
+                f1.Add(new Point(0.5, 0.5));
+                f1.Add(new Point(1.0, 1.0));
 
                 PiecewiseConstantFunction f2 = new();
-                f2.Add(new Point(0.2));
-                f2.Add(new Point(0.7));
-                f2.Add(new Point(1.0));
+                f2.Add(new Point(0.2, 0.2));
+                f2.Add(new Point(0.7, 0.7));
+                f2.Add(new Point(1.0, 1.0));
 
                 // Act
                 double distance = f1.CalculateHausdorffDistance(f2);
@@ -108,16 +108,16 @@ namespace HausdorffDistanceLibrary.Test
             {
                 // Arrange
                 PiecewiseConstantFunction f1 = new();
-                f1.Add(new Point(0.0));
-                f1.Add(new Point(0.5));
-                f1.Add(new Point(1.0));
+                f1.Add(new Point(0.0, 0.0));
+                f1.Add(new Point(0.5, 0.5));
+                f1.Add(new Point(1.0, 1.0));
 
                 PiecewiseConstantFunction f2 = new();
-                f2.Add(new Point(0.0));
-                f2.Add(new Point(0.25));
-                f2.Add(new Point(0.5));
-                f2.Add(new Point(0.75));
-                f2.Add(new Point(1.0));
+                f2.Add(new Point(0.0, 0.0));
+                f2.Add(new Point(0.25, 0.25));
+                f2.Add(new Point(0.5, 0.5));
+                f2.Add(new Point(0.75, 0.75));
+                f2.Add(new Point(1.0, 1.0));
 
                 PiecewiseConstantFunction merged = PiecewiseConstantFunction.MergeDomains(f1, f2);
 
@@ -133,13 +133,13 @@ namespace HausdorffDistanceLibrary.Test
             {
                 // Arrange
                 PiecewiseConstantFunction f1 = new();
-                f1.Add(new Point(0.0));
-                f1.Add(new Point(0.5));
-                f1.Add(new Point(1.0));
+                f1.Add(new Point(0.0, 0.0));
+                f1.Add(new Point(0.5, 0.5));
+                f1.Add(new Point(1.0, 1.0));
 
                 PiecewiseConstantFunction f2 = new();
-                f2.Add(new Point(0.25));
-                f2.Add(new Point(0.75));
+                f2.Add(new Point(0.25, 0.25));
+                f2.Add(new Point(0.75, 0.75));
 
                 PiecewiseConstantFunction merged = PiecewiseConstantFunction.MergeDomains(f1, f2);
 
@@ -156,13 +156,13 @@ namespace HausdorffDistanceLibrary.Test
             {
                 // Arrange
                 PiecewiseConstantFunction f1 = new();
-                f1.Add(new Point(0.0));
-                f1.Add(new Point(0.5));
-                f1.Add(new Point(1.0));
+                f1.Add(new Point(0.0, 0.0));
+                f1.Add(new Point(0.5, 0.5));
+                f1.Add(new Point(1.0, 1.0));
 
                 PiecewiseConstantFunction f2 = new();
-                f2.Add(new Point(0.25));
-                f2.Add(new Point(0.75));
+                f2.Add(new Point(0.25, 0.25));
+                f2.Add(new Point(0.75, 0.75));
 
                 PiecewiseConstantFunction merged = PiecewiseConstantFunction.MergeDomains(f1, f2);
 
@@ -179,9 +179,9 @@ namespace HausdorffDistanceLibrary.Test
             {
                 // Arrange
                 PiecewiseConstantFunction f1 = new();
-                f1.Add(new Point(0.0));
-                f1.Add(new Point(0.5));
-                Assert.Throws<Exception>(() => f1.Add(new Point(0.2)));
+                f1.Add(new Point(0.0, 0.0));
+                f1.Add(new Point(0.5, 0.5));
+                Assert.Throws<Exception>(() => f1.Add(new Point(0.2, 1.0)));
             }
 
         }
