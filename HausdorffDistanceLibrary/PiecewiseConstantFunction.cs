@@ -16,8 +16,8 @@ namespace HausdorffDistanceLibrary
 
        public void Add(Point point)
        {
-            if (_points.Count != 0 && _points.Last().Value > point.Value)
-                throw new Exception(string.Format(ErrorAddPoint, _points.Last().Value, point.Value));
+            if (_points.Count != 0 && _points.Last().X > point.X)
+                throw new Exception(string.Format(ErrorAddPoint, _points.Last().X, point.X));
 
             _points.Add(point);
         } 
@@ -36,7 +36,7 @@ namespace HausdorffDistanceLibrary
 
             foreach (var point in first._points)
             {
-                double minDistance = second._points.Min(p => Math.Abs(p.Value - point.Value));
+                double minDistance = second._points.Min(p => Math.Abs(p.Y - point.Y));
 
                 if (minDistance > distance)
                     distance = minDistance;
