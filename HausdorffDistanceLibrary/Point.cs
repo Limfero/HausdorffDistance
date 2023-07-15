@@ -2,11 +2,14 @@
 {
     public class Point
     {
-        public double Value { get; set; }
+        public double X { get; set; }
 
-        public Point(double value)
+        public double Y { get; set; }
+
+        public Point(double x, double y)
         {
-            Value = value;
+            X = x;
+            Y = y;
         }  
     }
 }
